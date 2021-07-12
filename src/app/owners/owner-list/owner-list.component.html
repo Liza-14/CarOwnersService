@@ -1,0 +1,23 @@
+<input type="text" name="ownersName" [(ngModel)]="owner">
+<div>
+  <button [hidden]="add" (click)="addOwner()">Добавить</button>
+  <button [hidden]="edit" (click)="updateOwner()">Update</button>
+</div>
+<table id="owners">
+  <tr>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Отчество</th>
+    <th>Количество автомобилей</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let owner of owners">
+    <td>{{owner.lastName}}</td>
+    <td>{{owner.firstName}}</td>
+    <td>{{owner.middleName}}</td>
+    <td>{{owner.id}}</td>
+    <td><button (click)="setOwnerEdit(owner)">Update</button></td>
+    <td><button (click)="removeOwner(owner)">Delete</button></td>
+  </tr>
+</table>
